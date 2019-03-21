@@ -20,10 +20,10 @@
     </android.support.v7.widget.CardView>
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
-        app:layout_constraintTop_toBottomOf="@+id/fra_lol_cardView"
         android:id="@+id/fra_lol_refresh"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/fra_lol_cardView">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/fra_lol_recyclerView"

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/head_image_bg_height">
+
+        <TextView android:id="@+id/title"
+            android:text="新闻专题"
+            android:textColor="@color/black_80"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/card_margin"
+            />
+        <TextView
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全部"
+            android:layout_marginRight="@dimen/card_margin"
+            android:textColor="@color/black_alpha_60"
+            />
+        <android.support.v7.widget.RecyclerView
+            android:layout_marginTop="@dimen/card_margin"
+            android:id="@+id/item_heybox_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/title">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

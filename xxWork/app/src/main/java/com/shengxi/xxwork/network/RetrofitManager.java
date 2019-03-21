@@ -1,6 +1,7 @@
 package com.shengxi.xxwork.network;
 
 import com.shengxi.xxwork.WorkApp;
+import com.shengxi.xxwork.network.api.HexBoxService;
 import com.shengxi.xxwork.network.api.LOLNewsService;
 import com.shengxi.xxwork.utils.ApiConstans;
 import com.shengxi.xxwork.utils.CommonUtil;
@@ -26,6 +27,12 @@ public class RetrofitManager {
     public static LOLNewsService getLolRollPic(){
         return createApi(LOLNewsService.class,ApiConstans.LOL_BASE_URL);
     }
+
+    public static HexBoxService getTabTag(){
+
+        return createApi(HexBoxService.class,ApiConstans.HEYBOX_BASE_URL);
+    }
+
 
 
     /**

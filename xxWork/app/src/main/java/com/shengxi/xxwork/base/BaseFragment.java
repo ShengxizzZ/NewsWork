@@ -5,7 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.shengxi.xxwork.utils.eventbus.BindEventBus;
 import com.trello.rxlifecycle.components.RxFragment;
+
+import org.greenrobot.eventbus.EventBus;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -46,14 +49,25 @@ public abstract class BaseFragment extends RxFragment {
 
         lazyLoad();
         initData();
-        initEvent();
+        //initEvent();
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (this.getClass().isAnnotationPresent(BindEventBus.class)){
+            EventBus.getDefault().register(this);
+        }
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+        if (this.getClass().isAnnotationPresent(BindEventBus.class)){
+            EventBus.getDefault().unregister(this);
+        }
     }
 
     @Override
